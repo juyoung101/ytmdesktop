@@ -63,8 +63,8 @@ async function setActivity(info) {
 
         // activity.largeImageKey = 'ytm_logo_512'
         activity.type = 2 //"Listening to {name}" instead of "Playing {name}"
-        activity.assets.large_image = info.track.cover
-        activity.assets.small_image = info.player.isPaused
+        activity.largeImageKey = info.track.cover
+        activity.smallImageKey = info.player.isPaused
             ? 'discordrpc-pause'
             : 'discordrpc-play'
         activity.largeImageText = 'YouTube Music'
@@ -87,7 +87,9 @@ async function setActivity(info) {
                 pid: process.pid,
                 activity: {
                     state: activity.state,
-                    details: activity.details,
+                    name: activity.details,
+                    details: '- Youtube Music'
+                    type: activity.type,
                     timestamps: {
                         start: activity.startTimestamp,
                         end: activity.endTimestamp,
