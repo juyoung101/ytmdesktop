@@ -87,8 +87,7 @@ async function setActivity(info) {
                 pid: process.pid,
                 activity: {
                     state: activity.state,
-                    name: activity.details,
-                    details: '- Youtube Music',
+                    details: activity.details,
                     type: activity.type,
                     timestamps: {
                         start: activity.startTimestamp,
