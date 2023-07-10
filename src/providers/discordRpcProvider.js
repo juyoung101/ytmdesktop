@@ -88,7 +88,7 @@ async function setActivity(info) {
                 activity: {
                     state: activity.state,
                     name: activity.details,
-                    details: '- Youtube Music'
+                    details: '- Youtube Music',
                     type: activity.type,
                     timestamps: {
                         start: activity.startTimestamp,
