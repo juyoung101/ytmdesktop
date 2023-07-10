@@ -62,7 +62,7 @@ async function setActivity(info) {
         }
 
         // activity.largeImageKey = 'ytm_logo_512'
-        activity.type = 2 //"Listening to {name}" instead of "Playing {name}"
+        activity.type = 2 // (2) "Listening to {name}" instead of (1) "Playing {name}"
         activity.largeImageKey = info.track.cover
         activity.smallImageKey = info.player.isPaused
             ? 'discordrpc-pause'
