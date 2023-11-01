@@ -63,7 +63,7 @@ async function setActivity(info) {
         activity.type = 2; // (2) "Listening to {name}" instead of (1) "Playing {name}"
         activity.largeImageKey = info.track.cover;
         activity.smallImageKey = info.player.isPaused ? 'discordrpc-pause' : 'discordrpc-play';
-        activity.largeImageText = 'YouTube Music';
+        activity.largeImageText = "♪♪ " + info.track.title + " - " + info.track.author;
         activity.smallImageText = info.player.isPaused ? 'Paused' : 'Playing';
         activity.instance = false;
         if (discordSettings.details) {
