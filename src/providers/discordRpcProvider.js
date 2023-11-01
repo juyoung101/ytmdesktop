@@ -74,8 +74,8 @@ async function setActivity(info) {
             activity.buttons = [
                 {
                     label: 'Play on YouTube Music',
-                    url: 'https://music.youtube.com/watch?v=' + info.track.id,
-                },
+                    url: 'https://music.youtube.com/watch?v=' + info.track.id
+                }
             ]
         }
 
@@ -101,7 +101,7 @@ async function setActivity(info) {
                     },
                     instance: activity.instance,
                     buttons: activity.buttons,
-                },
+                }
             })
         }
     }
