@@ -60,10 +60,11 @@ async function setActivity(info) {
         }
 
         // activity.largeImageKey = 'ytm_logo_512'
-        activity.type = 2; // (2) "Listening to {name}" instead of (1) "Playing {name}"
+        activity.name = "♪♪" + info.track.title + " - " + info.track.author;
+        activity.emoji.name = "notes";
         activity.largeImageKey = info.track.cover;
         activity.smallImageKey = info.player.isPaused ? 'discordrpc-pause' : 'discordrpc-play';
-        activity.largeImageText = "♪♪ " + info.track.title + " - " + info.track.author;
+        activity.largeImageText = info.track.title + " - " + info.track.author;
         activity.smallImageText = info.player.isPaused ? 'Paused' : 'Playing';
         activity.instance = false;
         if (discordSettings.details) {
@@ -82,9 +83,10 @@ async function setActivity(info) {
             await client.request('SET_ACTIVITY', {
                 pid: process.pid,
                 activity: {
+                    name: activity.name,
+                    emoji: activity.emoji,
                     state: activity.state,
                     details: activity.details,
-                    type: activity.type,
                     timestamps: {
                         start: activity.startTimestamp,
                         end: activity.endTimestamp
