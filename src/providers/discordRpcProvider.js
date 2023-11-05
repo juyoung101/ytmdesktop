@@ -1,5 +1,5 @@
 const clientId = '495666957501071390';
-const RPC = require('discord-rpc');
+const RPC = require('discord-rpc-plus');
 const settingsProvider = require('./settingsProvider');
 
 let client;
